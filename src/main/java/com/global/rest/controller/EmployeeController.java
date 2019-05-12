@@ -19,15 +19,13 @@ import com.global.rest.exception.DataNotFoundException;
 import com.global.rest.exception.EmployeeNotFoundException;
 import com.global.rest.service.EmployeeService;
 
-import io.swagger.annotations.ApiOperation;
-
 @RestController
 public class EmployeeController {
 	private static Logger logger = LoggerFactory.getLogger(EmployeeController.class);
 	@Autowired 
 	EmployeeService employeeService;
 	
-	@ApiOperation(value = "View a list of employees",response = Iterable.class)
+	//@ApiOperation(value = "View a list of employees",response = Iterable.class)
 	@GetMapping(value="/employees")
 	public List<Employee> getEmployees(){
 		
@@ -40,7 +38,7 @@ public class EmployeeController {
 		
 	}
 	
-	@ApiOperation(value = "Search an employee with an ID",response = Employee.class)
+	//@ApiOperation(value = "Search an employee with an ID",response = Employee.class)
 	@GetMapping(value = "/employee")
 	public ResponseEntity<Employee> getEmployee( @RequestParam(value="id",required =false)Integer id,Employee employee) {
 	
